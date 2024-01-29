@@ -11,7 +11,7 @@ def action():
 
 window = Tk()
 window.title("Password Manager")
-window.config(padx=20, pady=20)
+window.config(padx=50, pady=50)
 canvas = Canvas(height=200, width=200)
 image = PhotoImage(file="logo.png")
 canvas.create_image(100, 100, image=image)
@@ -32,10 +32,13 @@ email_entry.grid(row=2, column=1, columnspan=2)
 password_label = Label(text="Password:")
 password_label.grid(row=3, column=0)
 
-password_entry = Entry(width=21)
+password_entry = Entry(width=30)
 password_entry.grid(row=3,column=1)
 
-generate_button = Button(text="Generate Password",command=action)
+generate_button = Button(text="Generate Password", command=action)
+generate_button.grid(row=3, column=2)
 
+add_button = Button(text="Add", command=action, width=36)
+add_button.grid(row=4, column=1, columnspan=2)
 
 window.mainloop()
