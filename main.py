@@ -46,7 +46,14 @@ def save():
     else:
         with open("data.json", "r") as data_file:
             # json.dump(newdata, data_file, indent=4)
+            # Reading old data
             data = json.load(data_file)
+            # Updating old data with new data
+            data.update(newdata)
+        with open("data.json", "w") as data_file:
+            # Saving updated data
+            json.dump(data, data_file, indent=4)
+
             website_entry.delete(0, END)
             # email_entry.delete(0, END)
             password_entry.delete(0, END)
